@@ -23,7 +23,8 @@ func main() {
 	}
 
 	// * Initialize Clerk client
-	client, err := clerk.NewClient("sk_test_EXcHIiBhyjSv1FKxPpo3g0QkMzZg5OSJYctcVFAWrx")
+	clerkStr := os.Getenv("CLERK_KEY")
+	client, err := clerk.NewClient(clerkStr)
 	if err != nil {
 		log.Fatal(err)
 	}
